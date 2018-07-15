@@ -10,7 +10,8 @@ Package soundex an implementation of the Soundex algorithm.
     )
 
     func main() {
-        fmt.Println(soundex.Code("bingo"))
+        fmt.Println(soundex.Code("Miller"))
+        fmt.Println(soundex.Code("Muller"))
     }
 */
 package soundex

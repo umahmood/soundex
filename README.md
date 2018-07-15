@@ -20,8 +20,14 @@ import (
 )
 
 func main() {
-    fmt.Println(soundex.Code("bingo"))
+    fmt.Println(soundex.Code("Miller"))
+    fmt.Println(soundex.Code("Muller"))
 }
+```
+Output:
+```
+M460
+M460
 ```
 
 # Documentation

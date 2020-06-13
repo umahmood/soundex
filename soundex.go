@@ -28,6 +28,13 @@ func transpose(sm map[string][]string) (soundexTable map[string]string) {
 
 // Code generates the soundex code for a given word
 func Code(word string) string {
+	// remove numbers and spaces
+	re := regexp.MustCompile("[0-9]")
+	word = re.ReplaceAllString(word, "")
+	word = strings.Replace(word, " ", "", -1)
+	if word == "" {
+		return "000"
+	}
 	// transpose the mappings to create a lookup table for convenience
 	soundexTable := transpose(soundexMappings)
 	// convert the word to lower case for consistent lookups
@@ -35,7 +42,7 @@ func Code(word string) string {
 	// save the first letter of the word
 	firstLetter := string(word[0])
 	// remove all occurrences of 'h' and 'w' except first letter
-	re := regexp.MustCompile("[hw]*")
+	re = regexp.MustCompile("[hw]*")
 	code := firstLetter + re.ReplaceAllString(word[1:], "")
 	// replace all consonants (include the first letter) with digits based
 	// on Soundex mapping table

@@ -31,12 +31,29 @@ var tests = []struct {
 		"Ashcroft",
 		"A261",
 	},
-	{"Tymczak",
+	{
+		"Tymczak",
 		"T522",
 	},
 	{
 		"Pfister",
 		"P236",
+	},
+	{
+		"AH KEY",
+		"A200",
+	},
+	{
+		"The quick brown fox",
+		"T221",
+	},
+	{
+		"h3110 w021d",
+		"H300",
+	},
+	{
+		"1337",
+		"000",
 	},
 }
 
